@@ -1,0 +1,5 @@
+.user-info__edit:hover{
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+};

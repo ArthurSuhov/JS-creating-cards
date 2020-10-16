@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body>
+  <div class="root">
+    <header class="header root__section">
+      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+    </header>
+    <div class="profile root__section">
+      <div class="user-info">
+        <div class="user-info__photo"></div>
+        <div class="user-info__data">
+          <h1 class="user-info__name">Jaques Causteau</h1>
+          <p class="user-info__job">Sailor, Researcher</p>
+          <button class="user-info__edit">Edit</button>
+        </div>
+        <button class="button user-info__button">+</button>
+      </div>
+    </div>
+    <div class="places-list root__section">
+      <!-- Пример вёрстки карточки: -->
+      <template id="template-card" style="display: none;">
+        <div class="place-card">
+          <div class="place-card__image" style="background-image: url(https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg)">
+            <button class="place-card__delete-icon"></button>
+          </div>
+          <div class="place-card__description">
+            <h3 class="place-card__name">Камчатка</h3>
+            <button class="place-card__like-icon"></button>
+          </div>
+        </div>
+      </template>
+      <!-- конец примера. -->
+    </div>
+    <div class="popup">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close">
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form" name="new" novalidate>
+            <input 
+            type="text" 
+            name="name" 
+            id='name'
+            class="popup__input popup__input_type_name" 
+            placeholder="Название" 
+            required
+            minlength="2" 
+            maxlength="30"
+            >
+            <span id='name-error' class="error-message"></span>
+            <input 
+            type="url" 
+            name="link" 
+            id='link'
+            class="popup__input popup__input_type_link-url" 
+            placeholder="Ссылка на картинку" 
+            required
+            >
+            <span id='link-error' class="error-message"></span>
+            <button type="submit" id="addCard" class="button popup__button popup__button_is-disabled" disabled>+</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_edit">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close popup__close-edit">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form" name="formEdit" novalidate>
+            <input 
+            type="text" 
+            name="nameEdit" 
+            id='nameEdit'
+            class="popup__input popup__input_type_name-edit" 
+            placeholder="Имя" 
+            required 
+            minlength="2" 
+            maxlength="30"
+            >
+            <span id="nameEdit-error" class="error-message"></span>
+            <input 
+            type="text" 
+            name="aboutEdit" 
+            id='aboutEdit'
+            class="popup__input popup__input_type_about-edit" 
+            placeholder="О себе" 
+            required 
+            minlength="2" 
+            maxlength="30"            
+            >
+            <span id='aboutEdit-error' class="error-message"></span>
+            <button type="submit" id="save" class="button popup__button popup__button_save popup__button_is-disabled" disabled>Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_img">
+      <div class="popup__content-img">
+        <img class="popup__picture">
+        <img src="./images/close.svg" alt="" class="popup__close-img">
+      </div>
+    </div>
+  </div>
+  <script src='./js/cards.js'></script>
+  <script src='./js/script.js'></script>
+</body>
+</html>

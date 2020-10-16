@@ -1,0 +1,11 @@
+@import url('./hover/user-info__edit.css');
+
+.user-info__edit{
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    display: block;
+    margin-top: 22px;
+};
+
